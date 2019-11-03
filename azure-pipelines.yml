@@ -50,6 +50,13 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(build.SourcesDirectory)'
+    Contents: '**\*.zip'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    flattenFolders: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
